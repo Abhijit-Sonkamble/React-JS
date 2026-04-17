@@ -15,7 +15,7 @@ export default function App() {
   useEffect(() => {
     console.log("Use Effect : ", allEmployees);
     localStorage.setItem("employees", JSON.stringify(allEmployees));
-  }, [allEmployees]); // Added dependency to fix original bug where it didn't update storage on change
+  }, [allEmployees]);
 
   const deleteEmployee = (index: number) => {
     setAllEmployees((allEmp) => allEmp.filter((_, i) => i !== index));
