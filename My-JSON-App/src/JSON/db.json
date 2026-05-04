@@ -1,0 +1,26 @@
+{
+  "products": [
+    {
+      "name": "Iphone 12",
+      "category": "Smartphones",
+      "price": 122345,
+      "stock": 32,
+      "image": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-17-finish-select-202509-mistblue_GEO_EMEA?wid=5120&hei=2880&fmt=webp&qlt=90&.v=WGdCRlQ0YVlqbTdXTEkxRnVQb0oxcFYyWWhPSUg0YytZdmJ2dmY4d09xcm9ybkE1WmZYZGw4ZVJBQ2FIUWYrLzhLcXQxZ1h0QThIT2dnUm5qbGk5OUJkSERIUjY1Wk1Od3FtNjF6NFZLVXNoQlNzRzdPQUgxWUhsSVV3V0VPSXhDcEN1NkN3RUFyY3dhaDU4aXM3eHp3&traceId=1",
+      "description": "fbfvcscvbfzdfsc",
+      "id": "cT6rIcqiteQ"
+    }
+  ],
+  "cart": [
+    {
+      "name": "Iphone 12",
+      "category": "Smartphones",
+      "price": 122345,
+      "stock": 32,
+      "image": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-17-finish-select-202509-mistblue_GEO_EMEA?wid=5120&hei=2880&fmt=webp&qlt=90&.v=WGdCRlQ0YVlqbTdXTEkxRnVQb0oxcFYyWWhPSUg0YytZdmJ2dmY4d09xcm9ybkE1WmZYZGw4ZVJBQ2FIUWYrLzhLcXQxZ1h0QThIT2dnUm5qbGk5OUJkSERIUjY1Wk1Od3FtNjF6NFZLVXNoQlNzRzdPQUgxWUhsSVV3V0VPSXhDcEN1NkN3RUFyY3dhaDU4aXM3eHp3&traceId=1",
+      "description": "fbfvcscvbfzdfsc",
+      "id": "lj-nhHWtyeY",
+      "quantity": 4
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
