@@ -5,11 +5,11 @@ import { getCartItems } from "../services/CartServices";
 export default function Header() {
     const [cartCount, setCartCount] = useState<number>(0);
 
- const fetchCount = async () => {
-    const cart = await getCartItems();
-    const total = cart.length; 
-    setCartCount(total);
-};
+    const fetchCount = async () => {
+        const cart = await getCartItems();
+        const total = cart.length; 
+        setCartCount(total);
+    };
 
     useEffect(() => {
         fetchCount();
@@ -18,38 +18,42 @@ export default function Header() {
     }, []);
 
     const linkClasses = ({ isActive }: { isActive: boolean }) => 
-        `text-xs font-black uppercase tracking-widest transition-all ${isActive ? "text-slate-900 border-b-2 border-slate-900 pb-1" : "text-slate-400 hover:text-slate-900"}`;
+        `text-sm uppercase tracking-widest transition-all ${isActive ? "text-cyan-400 border-l-2 border-cyan-400 pl-2" : "text-zinc-500 hover:text-cyan-300"}`;
 
     return (
-        <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200 shadow-sm">
-            <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+        <header className="sticky top-0 z-50 bg-zinc-950 border-b border-zinc-800 font-mono">
+            <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-24 flex items-center justify-between">
                 
-                <NavLink to="/" className="flex items-center gap-3">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-indigo-600">
-                        <span className="text-white font-black text-xl italic">A</span>
+                {/* Bracket-style logo replacing the rounded pill */}
+                <NavLink to="/" className="flex items-center gap-4 group">
+                    <div className="border border-cyan-500 px-2 py-1 text-cyan-400 group-hover:bg-cyan-500 group-hover:text-zinc-950 transition-all">
+                        <span className="font-bold text-xl">{"[ A ]"}</span>
                     </div>
-                    <span className="text-lg font-black tracking-tighter text-slate-900">AuraTech</span>
+                    <span className="text-xl font-light tracking-widest text-zinc-100">AURA<span className="font-bold text-cyan-400">TECH</span></span>
                 </NavLink>
 
-                <div className="flex items-center gap-10">
+                <div className="flex items-center gap-12">
                     <ul className="hidden md:flex items-center gap-8">
                         <li><NavLink to="/" className={linkClasses}>Store</NavLink></li>
                         <li><NavLink to="/view-products" className={linkClasses}>Inventory</NavLink></li>
                     </ul>
 
-                    <div className="flex items-center gap-6 border-l border-slate-200 pl-6">
+                    <div className="flex items-center gap-8 border-l border-zinc-800 pl-8">
+                        {/* New Shopping Cart Icon */}
                         <NavLink to="/cart" className="relative group p-2">
-                            <svg className="h-6 w-6 text-slate-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                            <svg className="h-6 w-6 text-zinc-400 group-hover:text-cyan-400 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="square" strokeLinejoin="miter" strokeWidth="1.5" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
                             </svg>
                             {cartCount > 0 && (
-                                <span className="absolute -top-1 -right-1 inline-flex items-center justify-center px-1.5 py-0.5 text-[9px] font-black text-white bg-indigo-600 rounded-full ring-2 ring-white">
+                                /* Sharp, glowing badge */
+                                <span className="absolute -top-1 -right-2 inline-flex items-center justify-center px-1.5 py-0.5 text-[10px] font-bold text-zinc-950 bg-cyan-400 shadow-[0_0_8px_rgba(34,211,238,0.8)]">
                                     {cartCount}
                                 </span>
                             )}
                         </NavLink>
 
-                        <NavLink to="/add-product" className="bg-slate-900 px-5 py-2 text-[10px] font-black uppercase text-white rounded-full hover:bg-indigo-600 transition-colors">
+                        {/* Ghost button with hover fill replacing the solid dark button */}
+                        <NavLink to="/add-product" className="border border-cyan-500 px-6 py-2 text-xs font-bold uppercase tracking-widest text-cyan-400 hover:bg-cyan-500 hover:text-zinc-950 transition-all">
                             Add Gadget
                         </NavLink>
                     </div>
